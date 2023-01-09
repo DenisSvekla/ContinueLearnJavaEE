@@ -13,9 +13,8 @@ import java.io.PrintWriter;
 public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String smth = req.getParameter("cat");
-        System.out.println(smth);
-     getServletContext().getRequestDispatcher("/HtmlWithCsswithdifferentFile.html").forward(req, resp);
+        req.setAttribute("ny", "Happy new year");
+     getServletContext().getRequestDispatcher("/Hello.jsp").forward(req, resp);
     }
 
     @Override
